@@ -1,4 +1,3 @@
-// Question : Take a singly linked list as input and print the reverse of the linked list.
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,8 +12,9 @@ class Node {
     }
 };
 
-void insert_tail(Node*& head, Node*& tail, int val) {
+void insert_in_tail(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
+
     if (head == NULL) {
         head = newNode;
         tail = newNode;
@@ -24,11 +24,21 @@ void insert_tail(Node*& head, Node*& tail, int val) {
     tail = newNode;
 }
 
-void print_reverse(Node* n) {
-    Node* temp = n;
-    if (temp == NULL) return;
-    print_reverse(temp->next);
-    cout << temp->val << " ";
+void find_max_min(Node* head) {
+    Node* temp = head;
+    int max = head->val;
+    int min = head->val;
+
+    while (temp != NULL) {
+        if (temp->val < min) {
+            min = temp->val;
+        }
+        if (temp->val > max) {
+            max = temp->val;
+        }
+        temp = temp->next;
+    }
+    cout << max << " " << min;
 }
 
 int main() {
@@ -40,9 +50,10 @@ int main() {
         if (val == -1) {
             break;
         }
-        insert_tail(head, tail, val);
+        insert_in_tail(head, tail, val);
     }
 
-    print_reverse(head);
+    find_max_min(head);
+
     return 0;
 }

@@ -1,2 +1,0 @@
-Before sorting: 1 4 5 2 7 
-After sorting: 7 5 4 2 1 

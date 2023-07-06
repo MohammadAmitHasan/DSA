@@ -1,5 +1,3 @@
-// Question: Take a singly linked list as input and sort it in descending order. Then print the list.
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,9 +10,9 @@ class Node {
         this->next = NULL;
     }
 };
-
-void insert_tail(Node*& head, Node*& tail, int val) {
+void insert_in_tail(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
+
     if (head == NULL) {
         head = newNode;
         tail = newNode;
@@ -24,16 +22,12 @@ void insert_tail(Node*& head, Node*& tail, int val) {
     tail = newNode;
 }
 
-void descending_sort(Node* head) {
-    for (Node* i = head; i->next != NULL; i = i->next) {
-        for (Node* j = i; j != NULL; j = j->next) {
-            if (i->val < j->val) {
-                swap(i->val, j->val);
-            }
-        }
-    }
+void print_reverse(Node* n) {
+    Node* temp = n;
+    if (temp == NULL) return;
+    print_reverse(temp->next);
+    cout << temp->val << " ";
 }
-
 void print_linked_list(Node* head) {
     Node* temp = head;
     while (temp != NULL) {
@@ -46,21 +40,16 @@ int main() {
     Node* head = NULL;
     Node* tail = NULL;
     int val;
-    while (true) {  // O(n)
+    while (true) {
         cin >> val;
         if (val == -1) {
             break;
         }
-        insert_tail(head, tail, val);
+        insert_in_tail(head, tail, val);
     }
 
-    cout << "Before sorting: ";
-    print_linked_list(head);
-
-    descending_sort(head);
-
-    cout << endl
-         << "After sorting: ";
+    print_reverse(head);
+    cout << endl;
     print_linked_list(head);
 
     return 0;

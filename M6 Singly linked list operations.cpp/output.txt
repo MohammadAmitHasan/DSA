@@ -1,0 +1,24 @@
+Option 1: Insert at Tail
+Option 2: Print Linked List
+Option 3: Insert at any Position
+Option 4: Insert at Head
+Option 5: Delete from Position
+Option 7: Terminate
+Please enter value: 
+Inserted at head
+
+Option 1: Insert at Tail
+Option 2: Print Linked List
+Option 3: Insert at any Position
+Option 4: Insert at Head
+Option 5: Delete from Position
+Option 7: Terminate
+
+Your Linked List: 5 
+
+Option 1: Insert at Tail
+Option 2: Print Linked List
+Option 3: Insert at any Position
+Option 4: Insert at Head
+Option 5: Delete from Position
+Option 7: Terminate
