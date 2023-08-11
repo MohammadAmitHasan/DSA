@@ -1,35 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+int main()
+{
     int n;
     cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
     }
-    int x;
-    cin >> x;
+
+    int searchValue;
+    cin >> searchValue;
+
     int l = 0;
     int r = n - 1;
-    bool flag = false;
-    while (l <= r) {
+    int position = -1;
+
+    while (l <= r)
+    {
         int mid_index = (l + r) / 2;
-        if (a[mid_index] == x) {
-            flag = true;
+        if (arr[mid_index] == searchValue)
+        {
+            position = mid_index;
             break;
         }
-        if (x > a[mid_index]) {
-            // dane jao
+        if (searchValue > arr[mid_index])
             l = mid_index + 1;
-        } else {
-            // bame jao
+        else
             r = mid_index - 1;
-        }
     }
-    cout << l << " " << r << endl;
-    if (flag == true)
-        cout << "YES" << endl;
+
+    if (position > -1)
+        cout << position << endl;
     else
-        cout << "NO" << endl;
+        cout << "Not Found" << endl;
     return 0;
 }
