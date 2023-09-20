@@ -1,30 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+{
     int n, q;
     cin >> n >> q;
     int a[n];
     int pre[n];
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cin >> a[i];
-        if (i == 0) {
+        if (i == 0)
+        {
             pre[i] = a[i];
-        } else {
+        }
+        else
+        {
             pre[i] = pre[i - 1] + a[i];
         }
     }
 
-    while (q--) {
+    while (q--)
+    {
         long long l, r;
         cin >> l >> r;
         l--;
         r--;
         long long sum;
-        if (l == 0) {
+        if (l == 0)
+        {
             sum = pre[r];
-        } else {
+        }
+        else
+        {
             sum = pre[r] - pre[l - 1];
         }
 
